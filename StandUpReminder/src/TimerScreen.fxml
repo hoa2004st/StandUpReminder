@@ -95,10 +95,10 @@
             <Insets bottom="10.0" />
          </padding>
       </Separator>
-      <TableView prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tblRecords" prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="colNo" prefWidth="35.0" text="No" />
-          <TableColumn fx:id="colDay" prefWidth="85.0" text="Date" />
+          <TableColumn fx:id="colDate" prefWidth="85.0" text="Date" />
             <TableColumn fx:id="colTotal" text="Total" />
             <TableColumn fx:id="colWork" text="Work" />
             <TableColumn fx:id="colRatio" text="Ratio" />

@@ -1,11 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TimerScreenController {
 
@@ -25,19 +21,19 @@ public class TimerScreenController {
     private ToggleButton btnWork;
 
     @FXML
-    private TableColumn<?, ?> colDay;
+    private TableColumn<RecordLoader, Integer> colNo;
 
     @FXML
-    private TableColumn<?, ?> colNo;
+    private TableColumn<RecordLoader, String> colDate;
 
     @FXML
-    private TableColumn<?, ?> colRatio;
+    private TableColumn<RecordLoader, String> colTotal;
 
     @FXML
-    private TableColumn<?, ?> colTotal;
+    private TableColumn<RecordLoader, String> colWork;
 
     @FXML
-    private TableColumn<?, ?> colWork;
+    private TableColumn<RecordLoader, String> colRatio;
 
     @FXML
     private Label lblTimer;
@@ -47,6 +43,9 @@ public class TimerScreenController {
 
     @FXML
     private TextField tfRemindAfter;
+
+    @FXML
+    private TableView<RecordLoader> tblRecords;
 
     @FXML
     void btnEndSessionPressed(ActionEvent event) {
@@ -69,5 +68,17 @@ public class TimerScreenController {
     }
 
     TimerScreenController() {}
+
+    @FXML
+    public void initialize() {
+        colDate.setCellValueFactory(new PropertyValueFactory<RecordLoader, String>("date"));
+        colDate.setCellValueFactory(new PropertyValueFactory<RecordLoader, String>("totalTime"));
+        colDate.setCellValueFactory(new PropertyValueFactory<RecordLoader, String>("workTime"));
+        colDate.setCellValueFactory(new PropertyValueFactory<RecordLoader, String>("Ratio"));
+
+        if (RecordLoader.records != null) {
+            tblRecords.setItems(RecordLoader.records);
+        }
+    }
 }
 

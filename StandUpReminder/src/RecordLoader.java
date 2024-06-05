@@ -1,14 +1,20 @@
+import javafx.collections.ObservableList;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class RecordLoader {
+    Integer no;
     String date;
     String totalTime;
     String workTime;
     String ratio;
-    public static List<RecordLoader> records;
+    public static ObservableList<RecordLoader> records;
 
     RecordLoader(String date, String totalTime, String workTime, String ratio) {
         this.date = date;
@@ -30,4 +36,5 @@ public class RecordLoader {
         };
         return RecordLoader.records;
     }
+
 }
