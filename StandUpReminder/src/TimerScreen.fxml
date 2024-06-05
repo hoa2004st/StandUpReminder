@@ -82,14 +82,6 @@
             </ToggleButton>
          </children>
       </HBox>
-      <ToggleButton fx:id="btnPause" contentDisplay="CENTER" mnemonicParsing="false" onAction="#btnPausePressed" prefHeight="40.0" prefWidth="110.0" text="Pause" toggleGroup="$TimerStateToggle">
-         <font>
-            <Font size="18.0" />
-         </font>
-         <VBox.margin>
-            <Insets bottom="30.0" left="125.0" />
-         </VBox.margin>
-      </ToggleButton>
       <Button fx:id="btnEndSession" mnemonicParsing="false" onAction="#btnEndSessionPressed" prefHeight="50.0" prefWidth="180.0" text="End Session">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -106,7 +98,7 @@
       <TableView prefHeight="200.0" prefWidth="200.0">
         <columns>
           <TableColumn fx:id="colNo" prefWidth="35.0" text="No" />
-          <TableColumn fx:id="colDay" prefWidth="85.0" text="Day" />
+          <TableColumn fx:id="colDay" prefWidth="85.0" text="Date" />
             <TableColumn fx:id="colTotal" text="Total" />
             <TableColumn fx:id="colWork" text="Work" />
             <TableColumn fx:id="colRatio" text="Ratio" />
